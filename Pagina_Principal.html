@@ -9,10 +9,8 @@
 <body>
     <header>
         <div class="navbar">
-            <div class="logo">Dashboard Pessoal</div>
+            <div class="logo">Dashbrother</div>
             <div class="actions">
-                <!--- <button class="submit-request">Submit a request</button>
-                <button class="signin">Sign in</button> --->
                 <button class="toggle-dark-mode">Dark Mode</button>
             </div>
         </div>
@@ -20,73 +18,35 @@
     
     <main>
         <h1>Bem vindo!</h1>
-        <!--<div class="search-bar">
-            <input type="text" placeholder="Search">
-            <button>&rarr;</button>
-        </div> -->
         <h2>Status dos sensores</h2>
-
         <div class="sections">
             <div class="section">
                 <div class="icon">🌞</div>
                 <h2>Temperatura</h2>
-                <p>Temperatura atual do ambiente: </p>
-                <!--<a href="#">Learn More &rarr;</a>-->
+                <p id = "temperatura">Temperatura atual do ambiente: </p>
             </div>
             <div class="section">
                 <div class="icon">💧</div>
                 <h2>Umidade</h2>
-                <p>Umidade atual do ambiente:</p>
-                <!--<a href="#">Learn More &rarr;</a>-->
+                <p id ="umidade">Umidade atual do ambiente: </p>
             </div>
             <div class="section">
                 <div class="icon">🕯️</div>
                 <h2>Luminosidade</h2>
-                <p>Luminosidade atual do ambiente: </p>
-                <!--<a href="#">Learn More &rarr;</a>-->
+                <p id="luminosidade">Luminosidade atual do ambiente: Apagado</p>
+                <div class="actions">
+                    <button id="toggle-luminosidade">Alternar Luz</button>
+                </div>
             </div>
             <div class="section">
                 <div class="icon">💡</div>
                 <h2>Leds</h2>
-                <p>Estado do LED:</p>
-                <!--<a href="#">Learn More &rarr;</a>
-            </div>
-            <div class="section">
-                <div class="icon">🔑</div>
-                <h2>Authenticate to Abstract</h2>
-                <p>Set up and configure SSO, SCIM, and Just-in-Time provisioning.</p>
-                <a href="#">Learn More &rarr;</a>
-            </div>
-            <div class="section">
-                <div class="icon">💬</div>
-                <h2>Abstract support</h2>
-                <p>Get in touch with a human.</p>
-                <a href="#">Learn More &rarr;</a>
-            </div> -->
+                <p id = led>Estado do LED:</p>
         </div>
     </main>
-
     <footer>
-        <!--<div class="footer-links">
-            <div class="column">
-                <h3>Abstract</h3>
-                <p>Start Trial<br>Pricing<br>Download</p>
-            </div>
-            <div class="column">
-                <h3>Resources</h3>
-                <p>Blog<br>Help Center<br>Release Notes<br>Status</p>
-            </div>
-            <div class="column">
-                <h3>Community</h3>
-                <p>Twitter<br>LinkedIn<br>Facebook<br>Dribbble<br>Podcast</p>
-            </div>
-            <div class="column">
-                <h3>Company</h3>
-                <p>About Us<br>Careers<br>Legal<br>Contact Us<br>info@abstract.com</p>
-            </div>
-        </div>
-        <p>&copy; Copyright 2024 Abstract Studio Design, Inc. All rights reserved</p>
-    </footer> -->
-    <script src="js/darkmode.js"></script>    
+    </footer>
+    <script src="js/darkmode.js"></script>
+    <script src="js/atualizar_Valores.js"></script>
 </body>
 </html>
