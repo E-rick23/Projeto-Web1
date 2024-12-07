@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abstract</title>
+    <title>Dashbrother</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -14,27 +14,20 @@
             <div class="logo">Dashbrother</div>
             <div class="actions">
                 <button class="toggle-dark-mode">Dark Mode</button>
+                <button id="open-settings">⚙️</button>
             </div>
         </div>
     </header>
 
     <main>
-        <h1>Bem vindo!</h1>
-        <h2>Status dos sensores</h2>
-        <div class="display">
-            <div>
-                <div class="icon">📅</div>
-            <div class="date" id="date">
-                Carregando data...
-            </div>
-            </div>
-            <div>
-                <div class="icon">🕗</div>
-            <div class="time" id="time">
-                Carregando hora...
-            </div>
-            </div>
+        <p id="saudacao"></p>
+        <div class="time" id="time">
+            Carregando hora...
         </div>
+        <div class="date" id="date">
+            Carregando data...
+        </div>
+        <h1>Status dos sensores</h1>
         <div class="sections">
             <div class="section">
                 <div class="icon">🌞</div>
@@ -60,10 +53,18 @@
                 <p id=led>Estado do LED:</p>
             </div>
     </main>
-    <footer>
-    </footer>
+    <footer></footer>
+    <div id="settings-menu" class="hidden">
+        <div class="settings-container">
+            <h2>Configurações</h2>
+            <button onclick="inserirNome()">Inserir Nome</button>
+            <button id="close-settings">Fechar</button>
+        </div>
+    </div>
     <script src="js/darkmode.js"></script>
     <script src="js/atualizar_Valores.js"></script>
+    <script src="js/saudacao.js"></script>
+    <script src="js/configuracao.js"></script>
 </body>
 
 </html>
