@@ -281,6 +281,14 @@ body.dark-mode .display {
     margin-bottom: 15px;
 }
 
+.divider {
+    width: 50%; /* Define a largura da barra */
+    margin: 20px auto; /* Centraliza e adiciona espaçamento */
+    border: none; /* Remove bordas padrão */
+    border-top: 2px solid #ccc; /* Define uma linha superior */
+}
+
+
 #saudacao {
     font-size: 36px;
     margin-bottom: 15px;
