@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abstract</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
         <div class="navbar">
@@ -15,20 +17,34 @@
             </div>
         </div>
     </header>
-    
+
     <main>
         <h1>Bem vindo!</h1>
         <h2>Status dos sensores</h2>
+        <div class="display">
+            <div>
+                <div class="icon">📅</div>
+            <div class="date" id="date">
+                Carregando data...
+            </div>
+            </div>
+            <div>
+                <div class="icon">🕗</div>
+            <div class="time" id="time">
+                Carregando hora...
+            </div>
+            </div>
+        </div>
         <div class="sections">
             <div class="section">
                 <div class="icon">🌞</div>
                 <h2>Temperatura</h2>
-                <p id = "temperatura">Temperatura atual do ambiente: </p>
+                <p id="temperatura">Temperatura atual do ambiente: </p>
             </div>
             <div class="section">
                 <div class="icon">💧</div>
                 <h2>Umidade</h2>
-                <p id ="umidade">Umidade atual do ambiente: </p>
+                <p id="umidade">Umidade atual do ambiente: </p>
             </div>
             <div class="section">
                 <div class="icon">🕯️</div>
@@ -41,12 +57,13 @@
             <div class="section">
                 <div class="icon">💡</div>
                 <h2>Leds</h2>
-                <p id = led>Estado do LED:</p>
-        </div>
+                <p id=led>Estado do LED:</p>
+            </div>
     </main>
     <footer>
     </footer>
     <script src="js/darkmode.js"></script>
     <script src="js/atualizar_Valores.js"></script>
 </body>
+
 </html>
