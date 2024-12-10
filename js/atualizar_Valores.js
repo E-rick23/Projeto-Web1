@@ -24,28 +24,28 @@ function atualizarLED(valor) {
     LEDElemento.textContent = `Estado do LED: ${valor}`; // usar valor entre aspas tipo atualizarLED("ligado")
 }
 
-function updateTimeAndDate() {
-    const timeElement = document.getElementById("time");
-    const dateElement = document.getElementById("date");
+function atualizarTempoData() {
+    const tempoElemento = document.getElementById("time");
+    const dataElemento = document.getElementById("date");
 
-    const now = new Date();
+    const agora = new Date();
 
     // Hora atual formatada (HH:MM:SS)
-    const timeString = now.toLocaleTimeString();
+    const tempoString = agora.toLocaleTimeString();
 
     // Data atual formatada (Ex: Segunda-feira, 7 de Dezembro de 2024)
-    const dateString = now.toLocaleDateString("pt-BR", {
+    const dataString = agora.toLocaleDateString("pt-BR", {
         weekday: "long",
         day: "numeric",
         month: "long",
         year: "numeric",
     });
 
-    timeElement.textContent = timeString;
-    dateElement.textContent = dateString;
+    tempoElemento.textContent = tempoString;
+    dataElemento.textContent = dataString;
 }
 
 // Atualizar a hora e a data a cada segundo
-setInterval(updateTimeAndDate, 1000);
-updateTimeAndDate();
+setInterval(atualizarTempoData, 1000);
+atualizarTempoData();
 

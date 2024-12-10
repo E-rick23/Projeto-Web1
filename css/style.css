@@ -281,6 +281,22 @@ body.dark-mode .display {
     margin-bottom: 15px;
 }
 
+canvas {
+    margin: 20px auto;
+    display: block;
+    max-width: 90%;
+}
+
+#graficoUmidade {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
 .divider {
     width: 50%; /* Define a largura da barra */
     margin: 20px auto; /* Centraliza e adiciona espaçamento */
