@@ -81,11 +81,11 @@ body, header, footer, .navbar, .search-bar, .section, .actions button, .search-b
 
 body.dark-mode {
     color: #f5f5f7;
-    background-color: #1E1E2C;
+    background-color: #041C32;
 }
 
 body.dark-mode header {
-    background-color: #070d61;
+    background-color: #064663;
     padding: 10px 20px;
     color: #fff;
     display: flex;
@@ -98,7 +98,7 @@ body.dark-mode .navbar {
     align-items: center;
     width: 100%; /* Ocupa toda a largura da página */
     padding: 10px 20px;
-    background-color: #070d61;
+    background-color: #064663;
     color: #fff;
 }
 
@@ -107,11 +107,11 @@ body.dark-mode .search-bar {
 }
 
 body.dark-mode #settings-menu{
-    background-color: #070d61;
+    background-color: #064663;
 }
 
 body.dark-mode .section {
-    background-color: #444;
+    background-color: #04293A;
     color: #ddd;
 }
 
@@ -144,7 +144,7 @@ body.dark-mode .section p {
 }
 
 body.dark-mode footer {
-    background-color: #070d61;
+    background-color: #064663;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -299,11 +299,6 @@ canvas {
     width: 100%;
     max-width: 300px;
     height: auto;
-}
-
-#temperatura {
-    font-size: 1.2em;
-    color: #333;
 }
 
 
