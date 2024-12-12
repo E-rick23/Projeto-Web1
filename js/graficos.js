@@ -2,6 +2,10 @@
 // Isso será usado para renderizar o gráfico
 const ctx = document.getElementById('graficoUmidade').getContext('2d');
 
+function pegarCorLabel() {
+    return document.body.classList.contains('dark-mode') ? '#fff' : '#000';
+}
+
 // Define os dados iniciais para o gráfico, com labels (rótulos) vazios
 // e um dataset para armazenar os valores da umidade
 const dataInicial = {
@@ -26,7 +30,8 @@ const configuracao = {
             x: {
                 title: {
                     display: true,
-                    text: 'Horário'
+                    text: 'Horário',
+                    color: pegarCorLabel()
                 }
             },
             y: {
@@ -34,13 +39,17 @@ const configuracao = {
                 max: 100,
                 title: {
                     display: true,
-                    text: 'Umidade (%)'
+                    text: 'Umidade (%)',
+                    color: pegarCorLabel()
                 }
             }
         },
         plugins: {
             legend: {
-                display: true
+                display: true,
+                labels: {
+                    color: pegarCorLabel() // Cor das labels da legenda
+                }
             }
         }
     }
@@ -48,14 +57,25 @@ const configuracao = {
 
 const graficoUmidade = new Chart(ctx, configuracao);
 
-function atualizarGraficoUmidade(newValue) {
+function atualizarGraficoUmidade(novoValor) {
     const atual = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+    const novaCor = pegarCorLabel();
+
+    // Atualizar a cor dos labels
+    graficoUmidade.options.scales.x.title.color = novaCor;
+    graficoUmidade.options.scales.y.title.color = novaCor;
+    graficoUmidade.options.plugins.legend.labels.color = novaCor;
+
+    // Atualizar cores dos valores
+    graficoUmidade.options.scales.x.ticks.color = novaCor;
+    graficoUmidade.options.scales.y.ticks.color = novaCor;
 
     // Adicionar o novo horário no eixo X
     graficoUmidade.data.labels.push(atual);
 
     // Adicionar o novo valor de umidade no eixo Y
-    graficoUmidade.data.datasets[0].data.push(newValue);
+    graficoUmidade.data.datasets[0].data.push(novoValor);
 
     // Limitar o gráfico a 10 pontos no máximo
     if (graficoUmidade.data.labels.length > 10) {
