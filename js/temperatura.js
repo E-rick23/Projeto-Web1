@@ -1,33 +1,57 @@
 
-const API_KEY = '238724a7675efd6a9c5382912d45a80a';  // Substitua pela chave da OpenWeatherMap
+const API_KEY = '';  // Substitua pela chave da OpenWeatherMap
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
+const GEOCODING_BASE_URL = 'https://api.openweathermap.org/geo/1.0/reverse';
 
-async function obterTemperatura(lat, lon) {
+// Função para obter informações climáticas
+async function obterInformacoesClimaticas(lat, lon) {
     try {
         const response = await fetch(`${BASE_URL}?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${API_KEY}`);
-        if (!response.ok) throw new Error('Erro ao buscar dados da API');
+        if (!response.ok) throw new Error('Erro ao buscar dados da API de clima');
         const data = await response.json();
-        return data.main.temp; // Retorna a temperatura em Celsius
+        return {
+            temperatura: data.main.temp,
+            cidade: data.name,
+            pais: data.sys.country
+        };
     } catch (error) {
-        console.error('Erro ao obter a temperatura:', error);
+        console.error('Erro ao obter informações climáticas:', error);
         return null;
     }
 }
 
-function atualizarTemperatura() {
+// Função para obter informações do estado usando geocoding
+async function obterEstado(lat, lon) {
+    try {
+        const response = await fetch(`${GEOCODING_BASE_URL}?lat=${lat}&lon=${lon}&limit=1&appid=${API_KEY}`);
+        if (!response.ok) throw new Error('Erro ao buscar dados da API de geocoding');
+        const data = await response.json();
+        return data[0]?.state || null; // Retorna o estado se disponível
+    } catch (error) {
+        console.error('Erro ao obter estado:', error);
+        return null;
+    }
+}
+
+// Função para atualizar a exibição no HTML
+async function atualizarTemperatura() {
     if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(async (position) => {
             const { latitude, longitude } = position.coords;
-            const temperatura = await obterTemperatura(latitude, longitude);
+
+            const infoClimatica = await obterInformacoesClimaticas(latitude, longitude);
+            const estado = await obterEstado(latitude, longitude);
+
             const elementoTemperatura = document.getElementById('temperatura');
-            if (temperatura !== null) {
-                elementoTemperatura.textContent = `Temperatura atual do ambiente: ${temperatura}°C`;
+            if (infoClimatica) {
+                const localCompleto = `${infoClimatica.cidade}, ${estado ? estado + ', ' : ''}${infoClimatica.pais}`;
+                elementoTemperatura.textContent = `Local: ${localCompleto} - Temperatura atual: ${infoClimatica.temperatura}°C`;
             } else {
-                elementoTemperatura.textContent = 'Não foi possível obter a temperatura.';
+                elementoTemperatura.textContent = 'Não foi possível obter a temperatura e o local.';
             }
         }, () => {
             const elementoTemperatura = document.getElementById('temperatura');
-            elementoTemperatura.textContent = 'Por favor, permita o acesso a localização para ver a temperatura da região.';
+            elementoTemperatura.textContent = 'Não foi possível acessar sua localização.';
         });
     } else {
         const elementoTemperatura = document.getElementById('temperatura');
