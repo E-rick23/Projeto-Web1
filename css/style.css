@@ -106,6 +106,10 @@ body.dark-mode .search-bar {
     background-color: #444;
 }
 
+body.dark-mode #settings-menu{
+    background-color: #070d61;
+}
+
 body.dark-mode .section {
     background-color: #444;
     color: #ddd;
@@ -296,6 +300,12 @@ canvas {
     max-width: 300px;
     height: auto;
 }
+
+#temperatura {
+    font-size: 1.2em;
+    color: #333;
+}
+
 
 .divider {
     width: 50%; /* Define a largura da barra */
