@@ -90,4 +90,5 @@ function atualizarGraficoUmidade(novoValor) {
 setInterval(() => {
     const UmidadeSimulada = Math.floor(Math.random() * 41) + 30; // Umidade aleatória entre 30% e 70%
     atualizarGraficoUmidade(UmidadeSimulada);
+    atualizarUmidade(UmidadeSimulada);
 }, 2000);
