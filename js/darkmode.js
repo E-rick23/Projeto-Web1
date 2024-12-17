@@ -1,13 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     const toggleButton = document.querySelector(".toggle-dark-mode");
-    
-    // Função para ativar/desativar o modo escuro baseado na hora
-    function checkTimeForDarkMode() {
-        const now = new Date();
-        const hours = now.getHours();
-        
-        // Ativar modo escuro entre 17:30 e 5:30
-        if (hours >= 17 || hours < 5) {
+
+    function aplicarModoEscuroAutomatico() {
+        const horas = obterHoraAtual(); // Reutiliza a função do saudacao.js
+        if (horas >= 17 || horas < 6) {
             document.body.classList.add("dark-mode");
             toggleButton.textContent = "Light Mode";
         } else {
@@ -16,13 +12,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Ativar/desativar modo escuro manualmente
+    // Listener para alternar manualmente
     toggleButton.addEventListener("click", function() {
         document.body.classList.toggle("dark-mode");
         toggleButton.textContent = 
             document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
     });
 
-    // Checar o horário atual e definir o modo ao carregar a página
-    checkTimeForDarkMode();
+    // Aplica o modo escuro automaticamente ao carregar a página
+    aplicarModoEscuroAutomatico();
+
+    // Atualiza o modo escuro automaticamente ao mudar a hora (opcional)
+    setInterval(aplicarModoEscuroAutomatico, 60 * 1000); // Verifica a cada minuto
 });
