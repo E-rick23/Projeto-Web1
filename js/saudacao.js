@@ -3,11 +3,11 @@ let saudacaoBase = ""; // Variável para armazenar a saudação inicial
 function mostrarSaudacao() {
     const horas = obterHoraAtual(); // Usa a nova função para obter a hora
     if (horas < 12) {
-        saudacaoBase = "Bom dia";
+        saudacaoBase = "Bom dia!";
     } else if (horas < 18) {
-        saudacaoBase = "Boa tarde";
+        saudacaoBase = "Boa tarde!";
     } else {
-        saudacaoBase = "Boa noite";
+        saudacaoBase = "Boa noite!";
     }
     atualizarSaudacao(); // Atualiza o texto exibido
 }
