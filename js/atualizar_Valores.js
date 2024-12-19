@@ -1,4 +1,3 @@
-let luminosidadeAtual = "Apagado";
 
 function atualizarTemperatura(valor) {
     const temperaturaElemento = document.getElementById("temperatura");
@@ -9,15 +8,6 @@ function atualizarUmidade(valor) {
     const umidadeElemento = document.getElementById("umidade");
     umidadeElemento.textContent = `Umidade atual do ambiente: ${valor}%`; //nao precisa de aspas
 }
-
-function atualizarLuminosidade() {
-    luminosidadeAtual = luminosidadeAtual === "Apagado" ? "Aceso" : "Apagado";
-
-    const luminosidadeElemento = document.getElementById("luminosidade");
-    luminosidadeElemento.textContent = `Luminosidade atual do ambiente: ${luminosidadeAtual}`;
-}
-
-document.getElementById("toggle-luminosidade").addEventListener("click", atualizarLuminosidade);
 
 function atualizarLED(valor) {
     const LEDElemento = document.getElementById("led");
