@@ -34,7 +34,9 @@ async function obterLocalizacao(lat, lon) {
     }
 }
 
-// Função para atualizar a exibição no HTML
+// Adicione esta constante para definir o intervalo em milissegundos (ex.: 10 segundos)
+const INTERVALO_ATUALIZACAO = 10000; // 10 segundos
+
 async function atualizarTemperatura() {
     if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(async (position) => {
@@ -46,7 +48,10 @@ async function atualizarTemperatura() {
             const elementoTemperatura = document.getElementById('temperatura');
             if (infoClimatica) {
                 const localCompleto = `${localizacao.cidade}, ${localizacao.estado ? localizacao.estado + ', ' : ''}${localizacao.pais}`;
-                elementoTemperatura.textContent = `Local: ${localCompleto} - Temperatura atual: ${(infoClimatica.temperatura)}°C`;
+                elementoTemperatura.textContent = `Local: ${localCompleto} - Temperatura atual: ${(infoClimatica.temperatura+2)}°C`;
+
+                // Atualiza o gráfico com a temperatura obtida
+                atualizarGraficoTemperatura(infoClimatica.temperatura);
             } else {
                 elementoTemperatura.textContent = 'Não foi possível obter a temperatura e o local.';
             }
@@ -60,4 +65,9 @@ async function atualizarTemperatura() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', atualizarTemperatura);
+// Configura o intervalo para atualizar a temperatura automaticamente
+document.addEventListener('DOMContentLoaded', () => {
+    atualizarTemperatura(); // Chamada inicial
+    setInterval(atualizarTemperatura, INTERVALO_ATUALIZACAO);
+});
+
