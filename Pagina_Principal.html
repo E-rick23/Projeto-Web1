@@ -12,22 +12,26 @@
     <header>
         <div class="navbar">
             <div class="logo">Dashbrother</div>
+            <hr class="timeseparator1"></hr>
+            <div class="time" id="time">
+                Carregando hora...
+            </div>
+            <hr class="timedateseparator"></hr>
+            <div class="date" id="date">
+                Carregando data...
+            </div>
+            <hr class="timeseparator2"></hr>
             <div class="actions">
                 <button class="toggle-dark-mode">Dark Mode</button>
                 <button id="open-settings">⚙️</button>
             </div>
         </div>
+        
     </header>
 
     <main>
-        <p id="saudacao"></p>
         <hr class="divider"></hr>
-        <div class="time" id="time">
-            Carregando hora...
-        </div>
-        <div class="date" id="date">
-            Carregando data...
-        </div>
+        <p id="saudacao"></p>
         <hr class="divider"></hr>
         <h1>Status dos sensores</h1>
         <div class="sections">
@@ -35,6 +39,7 @@
                 <div class="icon">🌞</div>
                 <h2>Temperatura</h2>
                 <p id="temperatura">Temperatura atual do ambiente: </p>
+                <canvas id="graficoTemperatura" width="400" height="200"></canvas>
             </div>
             <div class="section">
                 <div class="icon">💧</div>
@@ -42,19 +47,7 @@
                 <p id="umidade">Umidade atual do ambiente: </p>
                 <canvas id="graficoUmidade" width="400" height="200"></canvas>
             </div>
-            <div class="section">
-                <div class="icon">🕯️</div>
-                <h2>Luminosidade</h2>
-                <p id="luminosidade">Luminosidade atual do ambiente: Apagado</p>
-                <div class="actions">
-                    <button id="toggle-luminosidade">Alternar Luz</button>
-                </div>
-            </div>
-            <div class="section">
-                <div class="icon">💡</div>
-                <h2>Leds</h2>
-                <p id=led>Estado do LED:</p>
-            </div>
+
     </main>
     <footer></footer>
     <div id="settings-menu" class="hidden">
@@ -71,5 +64,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/graficos.js"></script>
     <script src="js/temperatura.js"></script>
+    <script src="js/grafico_temperatura.js"></script>
 
 </html>
