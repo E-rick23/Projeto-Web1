@@ -35,19 +35,24 @@
         <hr class="divider"></hr>
         <h1>Status dos sensores</h1>
         <div class="sections">
-            <div class="section">
+            <div class="section" onmouseover="exibirGrafico('graficoTemperaturaContainer')" onmouseout="ocultarGrafico('graficoTemperaturaContainer')">
                 <div class="icon">🌞</div>
                 <h2>Temperatura</h2>
-                <p id="temperatura">Temperatura atual do ambiente: </p>
-                <canvas id="graficoTemperatura" width="400" height="200"></canvas>
+                <p id="temperatura">Temperatura atual do ambiente:</p>
+                <div class="grafico-container" id="graficoTemperaturaContainer">
+                    <canvas id="graficoTemperatura" width="400" height="200"></canvas>
+                </div>
             </div>
-            <div class="section">
+            <div class="section" onmouseover="exibirGrafico('graficoUmidadeContainer')" onmouseout="ocultarGrafico('graficoUmidadeContainer')">
                 <div class="icon">💧</div>
                 <h2>Umidade</h2>
-                <p id="umidade">Umidade atual do ambiente: </p>
-                <canvas id="graficoUmidade" width="400" height="200"></canvas>
+                <p id="umidade">Umidade atual do ambiente:</p>
+                <div class="grafico-container" id="graficoUmidadeContainer">
+                    <canvas id="graficoUmidade" width="400" height="200"></canvas>
+                </div>
             </div>
-
+        </div>
+        
     </main>
     <footer></footer>
     <div id="settings-menu" class="hidden">
@@ -64,6 +69,5 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/graficos.js"></script>
     <script src="js/temperatura.js"></script>
-    <script src="js/grafico_temperatura.js"></script>
 
 </html>

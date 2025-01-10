@@ -312,22 +312,20 @@ body.dark-mode .display {
     margin: auto;
 }
 
-canvas {
-    margin: 20px auto;
-    display: block;
-    max-width: 90%;
+.grafico-container {
+    visibility: hidden; /* Esconde o conteúdo do gráfico inicialmente */
+    opacity: 0; /* Torna o gráfico invisível */
+    height: 0; /* Define altura como zero */
+    overflow: hidden; /* Esconde o conteúdo excedente */
+    transition: visibility 0.3s ease, opacity 0.3s ease, height 0.3s ease; /* Suave */
+    margin-top: 10px; /* Ajusta o espaçamento acima */
 }
 
-#graficoUmidade {
-    display: block;
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+.grafico-container.mostrar {
+    visibility: visible; /* Torna o gráfico visível */
+    opacity: 1; /* Torna o gráfico totalmente opaco */
+    height: auto; /* Ajusta automaticamente ao tamanho do gráfico */
 }
-
 
 .divider {
     width: 30%; /* Define a largura da barra */
