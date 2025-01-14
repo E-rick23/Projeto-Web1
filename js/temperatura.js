@@ -4,7 +4,7 @@ const GEOCODING_BASE_URL = 'https://nominatim.openstreetmap.org/reverse';  // AP
 // Função para obter informações climáticas
 async function obterInformacoesClimaticas(lat, lon) {
     try {
-        const response = await fetch(`${BASE_URL}?latitude=${lat}&longitude=${lon}&current_weather=true&lang=pt`);
+        const response = await fetch(`${BASE_URL}?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature,relative_humidity_2m&lang=pt`);
         if (!response.ok) throw new Error('Erro ao buscar dados da API de clima');
         const data = await response.json();
         return {
