@@ -4,11 +4,19 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    height: 100%; /* Garante que o corpo ocupe toda a altura da tela */
+    display: flex;
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+    margin: 0; /* Remove margens padrão */
     font-family: Arial, sans-serif;
     color: #333;
     background-color: #dadada;
 }
+
+main {
+    flex: 1; /* Faz o conteúdo principal ocupar o espaço restante */
+}   
 
 header {
     background-color: #14aed4;
