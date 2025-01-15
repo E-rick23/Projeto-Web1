@@ -177,9 +177,9 @@ function atualizarGraficoUmidade(novoValor) {
 
 // Funções para exibir os gráfico 
 function exibirGrafico(containerId) {
-    const graficoContainer = document.getElementById(containerId); // Obtém o contêiner pelo ID
+    const graficoContainer = document.getElementById(containerId);
     if (graficoContainer) {
-        graficoContainer.classList.add('mostrar'); // Adiciona a classe para exibir e ajustar o tamanho
+        graficoContainer.classList.add('mostrar'); 
         console.log(`Exibindo gráfico no contêiner: ${containerId}`);
     } else {
         console.error(`Contêiner não encontrado: ${containerId}`);
@@ -187,9 +187,9 @@ function exibirGrafico(containerId) {
 }
 
 function ocultarGrafico(containerId) {
-    const graficoContainer = document.getElementById(containerId); // Obtém o contêiner pelo ID
+    const graficoContainer = document.getElementById(containerId);
     if (graficoContainer) {
-        graficoContainer.classList.remove('mostrar'); // Remove a classe para ocultar e ajustar o tamanho
+        graficoContainer.classList.remove('mostrar');
         console.log(`Ocultando gráfico no contêiner: ${containerId}`);
     } else {
         console.error(`Contêiner não encontrado: ${containerId}`);
