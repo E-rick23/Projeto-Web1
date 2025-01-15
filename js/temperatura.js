@@ -63,7 +63,7 @@ async function atualizarTemperatura() {
 
                 // Atualiza o gráfico com a temperatura obtida
                 atualizarGraficoUmidade(infoClimatica.umidadeRelativa);
-                atualizarGraficoTemperatura(infoClimatica.temperatura);
+                atualizarGraficoTemperatura(infoClimatica.temperatura+2);
             } else {
                 elementoTemperatura.textContent = 'Não foi possível obter a temperatura e o local.';
             }
