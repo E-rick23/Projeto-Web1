@@ -10,29 +10,26 @@ html, body {
     flex-direction: column; /* Organiza os filhos em uma coluna */
     margin: 0; /* Remove margens padrão */
     font-family: Arial, sans-serif;
-    color: #333;
+    color: #ffffff;
+    background-image: url('../Assets/day2.jpg'); /* Caminho para a imagem */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
     background-color: #dadada;
+    
 }
 
 main {
     flex: 1; /* Faz o conteúdo principal ocupar o espaço restante */
 }   
 
-header {
-    background-color: #14aed4;
-    padding: 10px 20px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .navbar {
+    background-color: rgba(169, 135, 162, 0.3); /* Semi-transparente */
     display: flex;
     align-items: center;
     width: 100%; /* Ocupa toda a largura da página */
     padding: 10px 20px;
-    background-color: #14aed4;
     color: #fff;
 }
 
@@ -83,22 +80,17 @@ main h1 {
 
 /* Modo escuro */
 
-body, header, footer, .navbar, .search-bar, .section, .actions button, .search-bar button {
+body, header, .navbar, .search-bar, .section, .actions button, .search-bar button {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode {
     color: #f5f5f7;
     background-color: #041C32;
-}
-
-body.dark-mode header {
-    background-color: #064663;
-    padding: 10px 20px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-image: url('../Assets/night.jpg'); /* Caminho para a imagem */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
 }
 
 body.dark-mode .timeseparator1{
@@ -122,8 +114,12 @@ body.dark-mode .navbar {
     align-items: center;
     width: 100%; /* Ocupa toda a largura da página */
     padding: 10px 20px;
-    background-color: #064663;
+    background-color: rgba(6, 70, 99, 0.3);
     color: #fff;
+}
+
+body.dark-mode .divider{
+    border-top: 2px solid #0975a7
 }
 
 body.dark-mode .search-bar {
@@ -135,7 +131,7 @@ body.dark-mode #settings-menu{
 }
 
 body.dark-mode .section {
-    background-color: #04293A;
+    background-color: rgba(4, 41, 58, 0.7);
     color: #ddd;
 }
 
@@ -165,13 +161,6 @@ body.dark-mode main p,
 body.dark-mode .section h2,
 body.dark-mode .section p {
     color: #fff;
-}
-
-body.dark-mode footer {
-    background-color: #064663;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
 }
 
 .search-bar {
@@ -210,7 +199,7 @@ body.dark-mode footer {
 
 .section {
     width: 250px;
-    background-color: #ffffff; /* Mesma cor do fundo */
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
     border-radius: 8px;
     margin: 10px;
@@ -241,33 +230,6 @@ body.dark-mode footer {
     font-weight: bold;
 }
 
-footer {
-    background-color: #14aed4;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.footer-links .column {
-    width: 150px;
-}
-
-.footer-links h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.footer-links p {
-    font-size: 14px;
-    line-height: 1.6;
-}
 
 .display {
     cursor: move;
@@ -339,14 +301,14 @@ body.dark-mode .display {
     width: 30%; /* Define a largura da barra */
     margin: 10px auto ; /* Centraliza e adiciona espaçamento */
     border: none; /* Remove bordas padrão */
-    border-top: 2px solid #8a8a8a; /* Define uma linha superior */
+    border-top: 2px solid #fcfcf2; /* Define uma linha superior */
 }
 
 .timeseparator1{
     width: 28%; /* Define a largura da barra */
     margin: 1px auto; /* Centraliza e adiciona espaçamento */
     border: none; /* Remove bordas padrão */
-    border-top: 2px solid #14aed4; /* Define uma linha superior */
+    border-top: 2px solid #fcfcf2; /* Define uma linha superior */
     height: 1px
 }
 
@@ -354,7 +316,7 @@ body.dark-mode .display {
     width: 23%; /* Define a largura da barra */
     margin: 1px auto; /* Centraliza e adiciona espaçamento */
     border: none; /* Remove bordas padrão */
-    border-top: 2px solid #14aed4; /* Define uma linha superior */
+    border-top: 2px solid #fcfcf2; /* Define uma linha superior */
     height: 1px
 }
 
@@ -372,7 +334,7 @@ body.dark-mode .display {
     right: 0;
     width: 300px;
     height: 100%;
-    background-color: #14aed4;
+    background-color: #56aaaf;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     padding: 20px;
