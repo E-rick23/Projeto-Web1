@@ -207,7 +207,7 @@ body.dark-mode .search-container {
 }
 
 .search-container button:hover {
-    background-color: #45a049; /* Cor do botão ao passar o mouse */
+    background-color: #cecece; /* Cor do botão ao passar o mouse */
 }
 
 .sections {
