@@ -80,7 +80,7 @@ main h1 {
 
 /* Modo escuro */
 
-body, header, .navbar, .search-bar, .section, .actions button, .search-bar button, .quick-links{
+body, header, .navbar, .section, .actions button, .quick-links{
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -122,10 +122,6 @@ body.dark-mode .divider{
     border-top: 2px solid #0975a7
 }
 
-body.dark-mode .search-bar {
-    background-color: #444;
-}
-
 body.dark-mode #settings-menu{
     background-color: #064663;
 }
@@ -143,8 +139,7 @@ body.dark-mode .quick-links{
 body.dark-mode .quick-links h2{
     color: #ffffff
 }
-body.dark-mode .actions button
-body.dark-mode .search-bar button {
+body.dark-mode .actions button {
     background-color: #3A4BB3;
     color: #f5f5f7;
 }
@@ -171,31 +166,48 @@ body.dark-mode .section p {
     color: #fff;
 }
 
-.search-bar {
-    margin: 0 auto;
+body.dark-mode .search-container {
+   background-color: rgba(4, 41, 58, 0.7);
+}
+.search-container {
+    width: 520px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: none; /* Remove o sombreamento */
+}
+
+.search-container form {
+    color: rgba(255, 255, 255, 0.7);
     display: flex;
-    max-width: 400px;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #dadbf1;
+    align-items: center;
+    width: 100%; /* Faz a barra de pesquisa ocupar toda a largura disponível */
+    max-width: 600px; /* Define uma largura máxima para a barra */
 }
 
-.search-bar input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #dadbf1;
-    border-radius: 4px;
-    outline: none;
-    font-size: 16px;
+.search-container input {
+    width: 100%; /* Faz o campo de entrada ocupar toda a largura disponível */
+    padding: 12px 20px; /* Aumenta o padding para deixar a barra maior */
+    font-size: 18px; /* Aumenta o tamanho da fonte dentro da barra */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Define a cor da borda */
+    border-radius: 25px; /* Faz as bordas arredondadas */
 }
 
-.search-bar button {
-    background-color: #4C5FD5;
-    color: #fff;
+.search-container button {
+    padding: 12px 20px; /* Aumenta o tamanho do botão */
+    font-size: 18px; /* Aumenta o tamanho da fonte no botão */
     border: none;
-    padding: 0 15px;
+    background-color: rgba(255, 255, 255, 0.7); /* Cor do botão */
+    color: black;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 25px; /* Borda arredondada para o botão */
+    margin-left: 10px; /* Espaço entre o campo de entrada e o botão */
+}
+
+.search-container button:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
 }
 
 .sections {

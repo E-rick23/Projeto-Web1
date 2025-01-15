@@ -34,6 +34,14 @@
         <p id="saudacao"></p>
         <hr class="divider"></hr>
         <div class="sections">
+            <div class="search-container">
+                <form action="https://www.google.com/search" method="get" target="_blank">
+                    <input type="text" name="q" placeholder="O que eu devo pesquisar?" required>
+                    <button type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+        <div class="sections">
             <div class="section" onmouseover="exibirGrafico('graficoTemperaturaContainer')" onmouseout="ocultarGrafico('graficoTemperaturaContainer')">
                 <div class="icon">🌞</div>
                 <h2>Temperatura</h2>
