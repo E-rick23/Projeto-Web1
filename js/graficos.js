@@ -175,12 +175,6 @@ function atualizarGraficoUmidade(novoValor) {
     graficoUmidade.update();
 }
 
-setInterval(() => {
-    const UmidadeSimulada = Math.floor(Math.random() * 41) + 30; // Umidade aleatória entre 30% e 70%
-    atualizarGraficoUmidade(UmidadeSimulada);
-    atualizarUmidade(UmidadeSimulada);
-}, 2000);
-
 // Funções para exibir os gráfico 
 function exibirGrafico(containerId) {
     const graficoContainer = document.getElementById(containerId); // Obtém o contêiner pelo ID
