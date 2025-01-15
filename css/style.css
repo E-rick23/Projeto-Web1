@@ -80,7 +80,7 @@ main h1 {
 
 /* Modo escuro */
 
-body, header, .navbar, .search-bar, .section, .actions button, .search-bar button {
+body, header, .navbar, .search-bar, .section, .actions button, .search-bar button, .quick-links{
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -135,6 +135,14 @@ body.dark-mode .section {
     color: #ddd;
 }
 
+body.dark-mode .quick-links{
+    background-color: rgba(4, 41, 58, 0.7);
+    color: #ddd;
+}
+
+body.dark-mode .quick-links h2{
+    color: #ffffff
+}
 body.dark-mode .actions button
 body.dark-mode .search-bar button {
     background-color: #3A4BB3;
@@ -194,7 +202,7 @@ body.dark-mode .section p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .section {
@@ -228,6 +236,36 @@ body.dark-mode .section p {
     color: #4C5FD5;
     text-decoration: none;
     font-weight: bold;
+}
+
+
+.quick-links {
+    width: 520px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: none; /* Remove o sombreamento */
+}
+
+.quick-links ul {
+    display: flex; /* Alinha os itens em linha */
+    justify-content: space-around; /* Espaçamento igual entre os itens */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.quick-links h2 {
+    margin-bottom: 20px; /* Adiciona o espaçamento entre o título e os ícones */
+    color: #333;
+}
+
+.quick-links .icon {
+    width: 30px; /* Tamanho do ícone */
+    height: 30px;
+    object-fit: contain; /* Garantir que a imagem não distorça */
 }
 
 
