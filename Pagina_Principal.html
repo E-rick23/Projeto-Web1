@@ -1,92 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abstract</title>
+    <title>Dashbrother</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
         <div class="navbar">
-            <div class="logo">Dashboard Pessoal</div>
+            <div class="logo">Dashbrother</div>
+            <hr class="timeseparator1"></hr>
+            <div class="time" id="time">
+                Carregando hora...
+            </div>
+            <hr class="timedateseparator"></hr>
+            <div class="date" id="date">
+                Carregando data...
+            </div>
+            <hr class="timeseparator2"></hr>
             <div class="actions">
-                <!--- <button class="submit-request">Submit a request</button>
-                <button class="signin">Sign in</button> --->
                 <button class="toggle-dark-mode">Dark Mode</button>
+                <button id="open-settings">⚙️</button>
             </div>
         </div>
+        
     </header>
-    
-    <main>
-        <h1>Bem vindo!</h1>
-        <!--<div class="search-bar">
-            <input type="text" placeholder="Search">
-            <button>&rarr;</button>
-        </div> -->
-        <h2>Status dos sensores</h2>
 
+    <main>
+        <hr class="divider"></hr>
+        <p id="saudacao"></p>
+        <hr class="divider"></hr>
         <div class="sections">
-            <div class="section">
+            <div class="search-container">
+                <form action="https://www.google.com/search" method="get" target="_blank">
+                    <input type="text" name="q" placeholder="O que eu devo pesquisar?" required>
+                    <button type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+        <div class="sections">
+            <div class="section" onmouseover="exibirGrafico('graficoTemperaturaContainer')" onmouseout="ocultarGrafico('graficoTemperaturaContainer')">
                 <div class="icon">🌞</div>
                 <h2>Temperatura</h2>
-                <p>Temperatura atual do ambiente: </p>
-                <!--<a href="#">Learn More &rarr;</a>-->
+                <p id="temperatura">Temperatura atual do ambiente:</p>
+                <div class="grafico-container" id="graficoTemperaturaContainer">
+                    <canvas id="graficoTemperatura" width="400" height="200"></canvas>
+                </div>
             </div>
-            <div class="section">
+            <div class="section" onmouseover="exibirGrafico('graficoUmidadeContainer')" onmouseout="ocultarGrafico('graficoUmidadeContainer')">
                 <div class="icon">💧</div>
                 <h2>Umidade</h2>
-                <p>Umidade atual do ambiente:</p>
-                <!--<a href="#">Learn More &rarr;</a>-->
+                <p id="umidade">Umidade atual do ambiente:</p>
+                <div class="grafico-container" id="graficoUmidadeContainer">
+                    <canvas id="graficoUmidade" width="400" height="200"></canvas>
+                </div>
             </div>
-            <div class="section">
-                <div class="icon">🕯️</div>
-                <h2>Luminosidade</h2>
-                <p>Luminosidade atual do ambiente: </p>
-                <!--<a href="#">Learn More &rarr;</a>-->
-            </div>
-            <div class="section">
-                <div class="icon">💡</div>
-                <h2>Leds</h2>
-                <p>Estado do LED:</p>
-                <!--<a href="#">Learn More &rarr;</a>
-            </div>
-            <div class="section">
-                <div class="icon">🔑</div>
-                <h2>Authenticate to Abstract</h2>
-                <p>Set up and configure SSO, SCIM, and Just-in-Time provisioning.</p>
-                <a href="#">Learn More &rarr;</a>
-            </div>
-            <div class="section">
-                <div class="icon">💬</div>
-                <h2>Abstract support</h2>
-                <p>Get in touch with a human.</p>
-                <a href="#">Learn More &rarr;</a>
-            </div> -->
         </div>
+        <div class="sections">
+            <div class="quick-links">
+                <h2>Links Rápidos</h2>
+                <ul>
+                    <li><a href="https://youtube.com"><img src="../Assets/Icons/youtube.png" alt="Youtube" class="icon"></a></li>
+                    <li><a href="https://drive.google.com"><img src="../Assets/Icons/drive.png" alt="Google Drive" class="icon"></a></li>
+                    <li><a href="https://x.com" target="_blank"><img src="../Assets/Icons/twitter-x.png" alt="X" class="icon"></a></li>
+                    <li><a href="https://theuselessweb.com/" target="_blank"><img src="../Assets/Icons/random.png" alt="Me surpreenda!" class="icon"></a></li>
+                </ul>
+            </div>
+        </div>
+        
+        
     </main>
-
-    <footer>
-        <!--<div class="footer-links">
-            <div class="column">
-                <h3>Abstract</h3>
-                <p>Start Trial<br>Pricing<br>Download</p>
-            </div>
-            <div class="column">
-                <h3>Resources</h3>
-                <p>Blog<br>Help Center<br>Release Notes<br>Status</p>
-            </div>
-            <div class="column">
-                <h3>Community</h3>
-                <p>Twitter<br>LinkedIn<br>Facebook<br>Dribbble<br>Podcast</p>
-            </div>
-            <div class="column">
-                <h3>Company</h3>
-                <p>About Us<br>Careers<br>Legal<br>Contact Us<br>info@abstract.com</p>
-            </div>
+    <footer></footer>
+    <div id="settings-menu" class="hidden">
+        <div class="settings-container">
+            <h2>Configurações</h2>
+            <button onclick="inserirNome()">Inserir Nome</button>
+            <button id="close-settings">Fechar</button>
         </div>
-        <p>&copy; Copyright 2024 Abstract Studio Design, Inc. All rights reserved</p>
-    </footer> -->
-    <script src="js/darkmode.js"></script>    
-</body>
+    </div>
+    <script src="js/darkmode.js"></script>
+    <script src="js/atualizar_Valores.js"></script>
+    <script src="js/saudacao.js"></script>
+    <script src="js/configuracao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/graficos.js"></script>
+    <script src="js/temperatura.js"></script>
+
 </html>

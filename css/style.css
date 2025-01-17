@@ -4,27 +4,31 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    height: 100%; /* Garante que o corpo ocupe toda a altura da tela */
+    display: flex;
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+    margin: 0; /* Remove margens padrão */
     font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #fff;
+    color: #ffffff;
+    background-image: url('../Assets/day2.jpg'); /* Caminho para a imagem */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-color: #dadada;
+    
 }
 
-header {
-    background-color: #14aed4;
-    padding: 10px 20px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+main {
+    flex: 1; /* Faz o conteúdo principal ocupar o espaço restante */
+}   
 
 .navbar {
+    background-color: rgba(169, 135, 162, 0.3); /* Semi-transparente */
     display: flex;
     align-items: center;
     width: 100%; /* Ocupa toda a largura da página */
     padding: 10px 20px;
-    background-color: #14aed4;
     color: #fff;
 }
 
@@ -70,27 +74,38 @@ main {
 
 main h1 {
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* Modo escuro */
 
-body, header, footer, .navbar, .search-bar, .section, .actions button, .search-bar button {
+body, header, .navbar, .section, .actions button, .quick-links{
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode {
     color: #f5f5f7;
-    background-color: #1E1E2C;
+    background-color: #041C32;
+    background-image: url('../Assets/night.jpg'); /* Caminho para a imagem */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
 }
 
-body.dark-mode header {
-    background-color: #070d61;
-    padding: 10px 20px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body.dark-mode .timeseparator1{
+    width: 28%; /* Define a largura da barra */
+    margin: 1px auto; /* Centraliza e adiciona espaçamento */
+    border: none; /* Remove bordas padrão */
+    border-top: 2px solid #064663; /* Define uma linha superior */
+    height: 1px
+}
+
+body.dark-mode .timeseparator2{
+    width: 23%; /* Define a largura da barra */
+    margin: 1px auto; /* Centraliza e adiciona espaçamento */
+    border: none; /* Remove bordas padrão */
+    border-top: 2px solid #064663; /* Define uma linha superior */
+    height: 1px
 }
 
 body.dark-mode .navbar {
@@ -98,21 +113,32 @@ body.dark-mode .navbar {
     align-items: center;
     width: 100%; /* Ocupa toda a largura da página */
     padding: 10px 20px;
-    background-color: #070d61;
+    background-color: rgba(6, 70, 99, 0.3);
     color: #fff;
 }
 
-body.dark-mode .search-bar {
-    background-color: #444;
+body.dark-mode .divider{
+    border-top: 2px solid #0975a7
+}
+
+body.dark-mode #settings-menu{
+    background-color: #064663;
 }
 
 body.dark-mode .section {
-    background-color: #444;
+    background-color: rgba(4, 41, 58, 0.7);
     color: #ddd;
 }
 
-body.dark-mode .actions button
-body.dark-mode .search-bar button {
+body.dark-mode .quick-links{
+    background-color: rgba(4, 41, 58, 0.7);
+    color: #ddd;
+}
+
+body.dark-mode .quick-links h2{
+    color: #ffffff
+}
+body.dark-mode .actions button {
     background-color: #3A4BB3;
     color: #f5f5f7;
 }
@@ -139,50 +165,66 @@ body.dark-mode .section p {
     color: #fff;
 }
 
-body.dark-mode footer {
-    background-color: #070d61;
-    color: #fff;
+body.dark-mode .search-container {
+   background-color: rgba(4, 41, 58, 0.7);
+}
+
+.search-container {
+    width: 520px;
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
     text-align: center;
+    box-shadow: none; /* Remove o sombreamento */
 }
 
-.search-bar {
-    margin: 0 auto;
+.search-container form {
+    color: rgba(255, 255, 255, 0.7);
     display: flex;
-    max-width: 400px;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #dadbf1;
+    align-items: center;
+    width: 100%; /* Faz a barra de pesquisa ocupar toda a largura disponível */
+    max-width: 600px; /* Define uma largura máxima para a barra */
 }
 
-.search-bar input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #dadbf1;
-    border-radius: 4px;
-    outline: none;
-    font-size: 16px;
+.search-container input {
+    width: 100%; /* Faz o campo de entrada ocupar toda a largura disponível */
+    padding: 12px 20px; /* Aumenta o padding para deixar a barra maior */
+    font-size: 18px; /* Aumenta o tamanho da fonte dentro da barra */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Define a cor da borda */
+    border-radius: 25px; /* Faz as bordas arredondadas */
 }
 
-.search-bar button {
-    background-color: #4C5FD5;
-    color: #fff;
+.search-container button {
+    padding: 12px 20px; /* Aumenta o tamanho do botão */
+    font-size: 18px; /* Aumenta o tamanho da fonte no botão */
     border: none;
-    padding: 0 15px;
+    background-color: rgba(255, 255, 255, 0.7); /* Cor do botão */
+    color: black;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 25px; /* Borda arredondada para o botão */
+    margin-left: 10px; /* Espaço entre o campo de entrada e o botão */
+}
+
+.search-container button:hover {
+    background-color: #cecece; /* Cor do botão ao passar o mouse */
 }
 
 .sections {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 10px;
+    align-items: flex-start; /* Garante que os itens não se ajustem mutuamente */
+}
+
+#graficoUmidadeContainer {
+    padding: 16px;
 }
 
 .section {
     width: 250px;
-    background-color: #fff; /* Mesma cor do fundo */
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
     border-radius: 8px;
     margin: 10px;
@@ -213,30 +255,159 @@ body.dark-mode footer {
     font-weight: bold;
 }
 
-footer {
-    background-color: #14aed4;
-    color: #fff;
+
+.quick-links {
+    width: 520px;
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
     text-align: center;
+    box-shadow: none; /* Remove o sombreamento */
 }
 
-.footer-links {
+.quick-links ul {
+    display: flex; /* Alinha os itens em linha */
+    justify-content: space-around; /* Espaçamento igual entre os itens */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.quick-links h2 {
+    margin-bottom: 20px; /* Adiciona o espaçamento entre o título e os ícones */
+    color: #333;
+}
+
+.quick-links .icon {
+    width: 30px; /* Tamanho do ícone */
+    height: 30px;
+    object-fit: contain; /* Garantir que a imagem não distorça */
+}
+
+
+.display {
+    cursor: move;
+    position: absolute;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    top: 60px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .display {
+    cursor: move;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 60px;
+    left: 10px;
+    background-color: #444;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.time {
+    font-size: 20px;
+    font-style: bold;
+    margin-bottom: 1px;
+    margin: auto;
+}
+
+.timedateseparator{
+    width: 1%; /* Define a largura da barra */
+    margin: 1px auto ; /* Centraliza e adiciona espaçamento */
+    border: none; /* Remove bordas padrão */
+    border-top: 2px solid #ffffff; /* Define uma linha superior */
+    height: 1px;
+    transform: rotate(90deg); /* Sem rotação inicial */
+}
+
+.date {
+    font-size: 20px;
+    margin-bottom: 1px;
+    margin: auto;
+}
+
+.grafico-container {
+    visibility: hidden;
+    opacity: 0; /* Torna invisível */
+    height: 0; /* Define altura zero */
+    overflow: hidden; /* Esconde o conteúdo excedente */
+    transition: visibility 0.3s ease, opacity 0.3s ease, height 0.3s ease;
+}
+
+.grafico-container.mostrar {
+    visibility: visible;
+    opacity: 1;
+    height: auto; /* Define uma altura fixa para evitar recalculo de layout */
+}
+
+.divider {
+    width: 30%; /* Define a largura da barra */
+    margin: 10px auto ; /* Centraliza e adiciona espaçamento */
+    border: none; /* Remove bordas padrão */
+    border-top: 2px solid #fcfcf2; /* Define uma linha superior */
+}
+
+.timeseparator1{
+    width: 28%; /* Define a largura da barra */
+    margin: 1px auto; /* Centraliza e adiciona espaçamento */
+    border: none; /* Remove bordas padrão */
+    border-top: 2px solid #fcfcf2; /* Define uma linha superior */
+    height: 1px
+}
+
+.timeseparator2{
+    width: 23%; /* Define a largura da barra */
+    margin: 1px auto; /* Centraliza e adiciona espaçamento */
+    border: none; /* Remove bordas padrão */
+    border-top: 2px solid #fcfcf2; /* Define uma linha superior */
+    height: 1px
+}
+
+
+#saudacao {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+/* Menu de configurações */
+
+#settings-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #56aaaf;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+#settings-menu.open {
+    transform: translateX(0);
+}
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#settings-menu h2 {
     margin-bottom: 20px;
-}
-
-.footer-links .column {
-    width: 150px;
-}
-
-.footer-links h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.footer-links p {
-    font-size: 14px;
-    line-height: 1.6;
+    text-align: center;
+    color: #dadbf1
 }
